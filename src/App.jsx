@@ -46,11 +46,11 @@ function App() {
 
               className="relative z-50 flex flex-col items-center justify-center gap-4 transition-all duration-[600ms]">
               <h1
-                className="relative z-50 mt-48 text-6xl font-bold leading-none uppercase whitespace-no-wrap md:text-7xl lg:text-8xl xl:text-9xl text-stroke">
+                className="relative z-50 mt-48 text-6xl font-bold leading-none uppercase whitespace-no-wrap md:text-7xl lg:text-8xl text-stroke">
                 ROLL INTO RICHIES
               </h1>
               <h3
-                className="relative z-50 mt-48 text-6xl font-bold leading-none uppercase whitespace-no-wrap md:text-7xl lg:text-8xl xl:text-9xl styled-heading">
+                className="relative z-50 mt-48 text-6xl font-bold leading-none uppercase whitespace-no-wrap md:text-7xl lg:text-8xl styled-heading">
                 From now
               </h3>
             </motion.div>
@@ -65,8 +65,9 @@ function App() {
                 ref={vidRef}
                 width="100%"
                 height="100%"
-                autoPlay={true}
-                loop={true}
+                autoPlay
+                loop
+                muted // Add the muted attribute
                 src="https://bigdaddy.in/wp-content/themes/big-daddy/assets/video/spotlight.mp4"
                 type="video/mp4"
               />
@@ -127,7 +128,7 @@ function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               style={{ display }}
-              transition={{ duration: 0.6, display: { delay: 0.4 }, y: { delay: 2 }, ease: "easeInOut" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
               className=' right-[0%] lg:right-[8%] 2xl:right-[12%] bottom-[calc(0%+100px)]  sm:bottom-[calc(0%+300px)] w-[106px] sm:w-[196px]  h-[106px] sm:h-[196px] z-40 absolute '
             >
               <img src="https://bigdaddy.in/wp-content/themes/big-daddy/assets/img/card.png" className='w-full h-full' alt="" />
@@ -137,7 +138,6 @@ function App() {
             {/*blurred dice*/}
             <motion.div
               style={{ display }}
-              transition={{ duration: 0.6, display: { delay: 0.4 }, y: { delay: 2 } }}
               className=' left-[3%] lg:left-[12%] 2xl:left-[17%] bottom-[calc(0%+300px)] dice  sm:bottom-[calc(0%+560px)] w-[86px] sm:w-[166px]  h-[76px] sm:h-[146px] z-40 absolute '
             >
               <img src="https://bigdaddy.in/wp-content/themes/big-daddy/assets/img/b-dice.png" className='w-full h-full' alt="" />
@@ -147,7 +147,6 @@ function App() {
             {/* coin */}
             <motion.div
               style={{ display }}
-              transition={{ duration: 0.6, display: { delay: 0.4 }, y: { delay: 2 } }}
               className=' right-[3%] lg:right-[12%] 2xl:right-[17%] bottom-[calc(0%+300px)] dice  sm:bottom-[calc(0%+560px)] w-[26px] sm:w-[86px]  h-[86px] sm:h-[166px] z-40 absolute '
             >
               <img src="https://bigdaddy.in/wp-content/themes/big-daddy/assets/img/b-coin.png" className='w-full h-full' alt="" />
@@ -155,9 +154,8 @@ function App() {
 
             {/* after logo */}
             <motion.div
-              transition={{ duration: 0.6, display: { delay: 0.4 }, y: { delay: 2 } }}
+              transition={{ duration: 0.6, y: { delay: 2 } }}
               style={{ display: displayAfterLogo, y: yAfterLogo, scale: scaleAfterLogo }}
-              exit={{ y: 200, opacity: 0 }}
               className='w-11/12 max-w-sm  absolute bottom-[calc(0%+300px)] transition-all duration-1000'
             >
               <motion.img
@@ -169,9 +167,7 @@ function App() {
         </motion.div>
 
       </section>
-      <section className="flex items-center justify-center w-full min-h-screen text-6xl text-center text-black font-bol">
-        OTHER CONTENT
-      </section>
+      <section className="flex items-center justify-center w-full min-h-screen text-6xl text-black font-bol">OTHER CONTENT</section>
     </div>
   )
 }
