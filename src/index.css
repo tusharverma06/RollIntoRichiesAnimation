@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  max-width: unset;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wheel {
+  animation: rotate 5s linear infinite;
+  /* animation-delay: 0.2s; */
+}
+
+@keyframes bounceUpDown {
+  0%,
+  100% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+.dice {
+  animation: bounceUpDown 5s ease-in-out infinite alternate;
+  transition: all 1s ease-in-out;
+}
+
+.text-stroke {
+  font-family: "cd-Bold";
+  font-size: 80px;
+  line-height: 1;
+  text-transform: uppercase;
+  width: fit-content;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+  color: #000;
+  font-family: "Inter";
+}
+.styled-heading {
+  font-family: "Inter";
+  font-size: 60px;
+  line-height: 1;
+  text-transform: capitalize;
+  width: fit-content;
+  margin: 0 auto;
+  background: linear-gradient(
+    271.16deg,
+    #452f78 -25.29%,
+    #452f78 13.11%,
+    #b687c9 51.75%,
+    #844d9a 74.96%,
+    rgba(132, 77, 154, 0) 114.56%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
