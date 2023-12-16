@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Open+Sans&family=Poppins&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Add this to your CSS file or style section */
+* {
+  font-family: "Open Sans" !important;
+}
 /* Remove ScrollBar */
 ::-webkit-scrollbar {
   display: none;
@@ -42,7 +45,7 @@
 @keyframes bounceUpDown {
   0%,
   100% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
   }
   50% {
     transform: translateY(0);
@@ -52,6 +55,11 @@
 .dice {
   animation: bounceUpDown 5s ease-in-out infinite alternate;
   transition: all 1s ease-in-out;
+}
+
+.coin {
+  animation: bounceUpDown 3s ease-in-out infinite alternate;
+  transition: all 1.2s ease-in-out;
 }
 
 .text-stroke {
