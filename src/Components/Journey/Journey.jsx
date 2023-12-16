@@ -3,6 +3,8 @@ import SectionContainer from '../Container/SectionContainer'
 import Pause from '../../assets/pauseIcon.svg'
 import Resume from '../../assets/resumeIcon.svg'
 import Video from '../../assets/showCase.mp4'
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 const Journey = () => {
     const videoRef = useRef(null);
@@ -37,6 +39,16 @@ const Journey = () => {
         }
     };
 
+    const targetRef = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+        offset: ['start end', 'end start'],
+    })
+
+    const windoWidth = useMediaQuery()
+
+    const top = useTransform(scrollYProgress, [0, 0.18, 0.20], windoWidth < 600 ? ['200px', '200px', '0px'] : ['200px', '200px', '0px'])
+    const scaleText = useTransform(scrollYProgress, [0, 0.18, 0.20], ['0.7', '0.6', '1'])
 
     return (
         <SectionContainer
@@ -44,7 +56,7 @@ const Journey = () => {
             desc={'Lorem ipsum dolor sit amet consectetur. Morbi varius consectetur blandit ut quis eget eu tellus. Quam morbi tempus odio sem in adipiscing consectetur odio lobortis. Enim urna gravida eleifend.'
             }
         >
-            <div className="relative w-full h-auto max-w-6xl mx-auto overflow-hidden ">
+            <motion.div style={{ y: top, scale: scaleText }} className="relative w-full h-auto max-w-6xl mx-auto overflow-hidden transition-all duration-500 " ref={targetRef}>
                 <video
                     ref={videoRef}
                     className="w-full h-auto relative z-[30] transition-opacity duration-500 ease-in-out opacity-100 group "
@@ -68,7 +80,7 @@ const Journey = () => {
                     </span>
 
                 </button>
-            </div>
+            </motion.div>
 
 
         </SectionContainer>)
