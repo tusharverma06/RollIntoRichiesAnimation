@@ -33,7 +33,7 @@ const Hero = () => {
     const scaleText = useTransform(scrollYProgress, [0, 0.57, 0.575, 0.580, 0.585,], ['1', '1', 1, '1', '1'])
     const display = useTransform(scrollYProgress, [0, 0.54, 0.583, 0.585], ['block', 'block', 'block', 'none'])
     // const displayAfterLogo = useTransform(scrollYProgress, [0, 0.580, 0.59, 0.59], ['none', 'none', 'block', 'block'])
-    const background = useTransform(scrollYProgress, [0, 0.54, 0.585], ['transparent', 'transparent', 'black'])
+    const background = useTransform(scrollYProgress, [0, 0.54, 0.585], ['transparent', 'transparent', '#030303'])
 
     // animations stuff for logo coming up after scroll
     const yAfterLogo = useTransform(scrollYProgress, [0, 0.54, 0.55, 0.582, 0.585, 0.585, 0.585], ['200px', '200px', '200px', '200px', '0px', '0px', '0px'])
@@ -230,10 +230,10 @@ const Hero = () => {
 
                     {/*coin left*/}
                     <motion.div
-                        style={{ display, rotateX: 180 }}
+                        style={{ display, }}
                         className=' left-[6%]  lg:left-[8%] 2xl:left-[12%] bottom-[calc(0%+180px)]  coin w-[86px] sm:w-[125px] lg:w-[168px]  h-[76px] sm:h-[120px] lg:h-[163px] z-40 absolute '
                     >
-                        <img src={RightCoin} className='w-full h-full' alt="" />
+                        <img style={{ rotateY: 180 }} src={RightCoin} className='w-full h-full' alt="" />
                     </motion.div>
 
 
@@ -242,7 +242,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' left-[-5%] lg:left-[-3%] 2xl:left-[0%] bottom-[calc(0%+450px)] sm:bottom-[calc(0%+300px)]   w-[86px] sm:w-[75px] lg:w-[115px]  h-[76px] sm:h-[70px] lg:h-[119px] z-40 absolute '
                     >
-                        <img src={BlurredCoin} className='w-full h-full' alt="" />
+                        <img src={BlurredCoin} className='w-full rotate-[-60deg]  h-full' alt="" />
                     </motion.div>
 
                     {/*goldish bronze coin left*/}
