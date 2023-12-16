@@ -1,5 +1,5 @@
 // Import necessary libraries and components
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Logo from '../../assets/navLogo.svg';
 import { Link } from 'react-router-dom';
 
@@ -26,9 +26,26 @@ export function Header() {
     ];
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            // Check if the user has scrolled more than 300vh
+            setScrolled(scrollY > window.innerHeight * 2);
+        };
+
+        // Attach the scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
-        <header className={`py-[30px]  fixed top-0 right-0 w-full px-14 sm:px-36 lg:px-40 xl:px-60 items-center z-50 flex justify-center bg-transparent`}>
+        <header className={`py-[30px] fixed top-0 right-0 w-full px-14 sm:px-36 lg:px-40 xl:px-60 items-center z-50 flex justify-center transition-all duration-500 ease-in-out ${scrolled ? 'bg-bg-primary shadow-xl drop-shadow-2xl' : 'bg-transparent'}`}>
             <nav className="relative z-50 flex flex-col items-center justify-between w-full md:flex-row">
                 <div className="flex items-center justify-between w-full lg:w-auto">
                     {/* Logo */}

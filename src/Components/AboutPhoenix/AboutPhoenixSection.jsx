@@ -1,0 +1,64 @@
+import React from 'react'
+import Juice from '../../assets/About/juice.svg'
+import Cards from '../../assets/About/cards.svg'
+import Dices from '../../assets/About/dices.svg'
+import Trophy from '../../assets/About/trophy.svg'
+import SectionContainer from '../Container/SectionContainer'
+const AboutPhoenixSection = () => {
+
+    const Info = [
+        {
+            title: `LOREM ISPUM`,
+            text: `Lorem ipsum dolor sit amet consectetur. Morbi varius consec blandit eu tellus.`,
+            img: Juice
+        },
+
+        {
+            title: `LOREM ISPUM`,
+            text: `Lorem ipsum dolor sit amet consectetur. Morbi varius consec blandit eu tellus.`,
+            img: Cards
+        },
+
+        {
+            title: `LOREM ISPUM`,
+            text: `Lorem ipsum dolor sit amet consectetur. Morbi varius consec blandit eu tellus.`,
+            img: Trophy
+        },
+
+        {
+            title: `LOREM ISPUM`,
+            text: `Lorem ipsum dolor sit amet consectetur. Morbi varius consec blandit eu tellus.`,
+            img: Dices
+        },
+
+    ]
+
+    return (
+        <SectionContainer
+            heading={'ABOUT PHEONIX'}
+            desc={'Lorem ipsum dolor sit amet consectetur. Iaculis purus lorem tempus ac enim iaculis egestas sapien commodo. Nibh congue pulvinar diam eget amet faucibus. Diam id tincidunt ipsum eget maecenas. Ultrices sed dui id urna quis sed scelerisque sem. Dignissim sed vulputate sit risus fringilla.'
+            }
+        >
+
+            <div className="flex flex-wrap items-center justify-center w-full gap-y-10 md:justify-start lg:justify-between 3xl:justify-center 3xl:gap-24">
+                {Info.map(({ title, text, img }, id) =>
+                    <div key={id} className="flex flex-col font-Cinzel lg:w-[calc(100%/4-40px)] md:w-[calc(100%/2-32px)] w-full items-center justify-start max-w-[300px] gap-5 px-2 ">
+                        {/* img,heading */}
+                        <div className="flex flex-col items-center justify-start w-full gap-4">
+                            <img src={img} alt='' />
+                            <h1 className="text-base font-bold text-white font-Cinzel lg:text-xl">{title}</h1>
+                        </div>
+                        {/* one liner */}
+                        <h4 className="w-full max-w-full text-[#ABABAB] text-sm lg:text-base text-center">
+                            {text}
+                        </h4>
+                    </div>
+
+                )}
+            </div>
+
+        </SectionContainer>
+    )
+}
+
+export default AboutPhoenixSection;
