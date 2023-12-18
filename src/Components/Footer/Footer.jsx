@@ -4,14 +4,14 @@ const Footer = () => {
   return (
     <div className="w-full ">
       <footer className="bg-white dark:bg-[#030303] lg:py-10 py-5 border-t border-[#E7C980] ">
-        <div className="mx-auto w-full max-w-screen-xl  p-4 py-6 lg:py-8">
+        <div className="w-full max-w-screen-xl p-4 py-6 mx-auto lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <div
-                className="flex items-center flex-col justify-center gap-8"
+                className="flex flex-col items-center justify-center gap-8"
               >
                 <img src="/logo.svg" className="" alt="FlowBite Logo" />
-                <div className="flex justify-center items-center gap-3">
+                <div className="flex items-center justify-center gap-3">
                   <div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -69,42 +69,42 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-8  sm:gap-40 sm:grid-cols-2 lg:px-0 px-10">
-              <div className="flex flex-col  justify-start items-start gap-6">
-              <h1 className="lg:text-xl uppercase font-Cinzel text-lg gradient-text leading-normal font-extrabold">
-                 Quick Links
-                    </h1>
+            <div className="grid grid-cols-2 gap-8 px-10 sm:gap-40 sm:grid-cols-2 lg:px-0">
+              <div className="flex flex-col items-start justify-start gap-6">
+                <h1 className="text-lg font-extrabold leading-normal uppercase lg:text-xl font-Cinzel gradient-text">
+                  Quick Links
+                </h1>
                 <ul className="text-[#ABABAB] font-medium text-left">
                   <li className="mb-4">
-                    <a href="https://flowbite.com/" className="hover:underline">
+                    <a href="#" className="hover:underline">
                       Packages
                     </a>
                   </li>
                   <li className="mb-4">
-                    <a href="https://tailwindcss.com/" className="hover:underline">
+                    <a href="#" className="hover:underline">
                       Gallery
                     </a>
                   </li>
                   <li className="mb-4">
-                    <a href="https://tailwindcss.com/" className="hover:underline">
+                    <a href="#" className="hover:underline">
                       Reviews
                     </a>
                   </li>
                   <li className="mb-4">
-                    <a href="https://tailwindcss.com/" className="hover:underline">
+                    <a href="#" className="hover:underline">
                       About us
                     </a>
                   </li>
                 </ul>
               </div>
-              <div className="flex flex-col  justify-start items-start gap-6">
-              <h1 className="lg:text-xl text-left uppercase font-Cinzel text-lg gradient-text leading-normal font-extrabold">
-                Need Help ?
-                    </h1>
+              <div className="flex flex-col items-start justify-start gap-6">
+                <h1 className="text-lg font-extrabold leading-normal text-left uppercase lg:text-xl font-Cinzel gradient-text">
+                  Need Help ?
+                </h1>
                 <ul className="text-[#ABABAB] font-medium text-left">
                   <li className="mb-4">
                     <a
-                      href="https://github.com/themesberg/flowbite"
+                      href="#"
                       className="hover:underline "
                     >
                       FAQ
@@ -112,7 +112,7 @@ const Footer = () => {
                   </li>
                   <li className="mb-4">
                     <a
-                      href="https://discord.gg/4eeurUVvTy"
+                      href="#"
                       className="hover:underline"
                     >
                       Terms & Conditions
@@ -120,7 +120,7 @@ const Footer = () => {
                   </li>
                   <li className="mb-4">
                     <a
-                      href="https://discord.gg/4eeurUVvTy"
+                      href="#"
                       className="hover:underline"
                     >
                       Cancellation Policy

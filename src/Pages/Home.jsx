@@ -12,16 +12,18 @@ import Cta from '../Components/CTA/Cta'
 
 const Home = () => {
     return (
-        <div className='relative flex flex-col items-center justify-start w-full min-h-screen '>
+        <div className='relative flex flex-col items-center justify-start w-full max-w-full min-h-screen '>
             <Hero />
-            <Experience />
-            <Gallery />
-            <WhatPeopleSay />
-            <Journey />
-            <Entertainment />
-            <AboutPhoenixSection />
-            <Packages/>
-<Cta/>
+            <div className='relative flex flex-col items-center justify-start w-full h-full max-w-full overflow-x-hidden '>
+                <Experience />
+                <Gallery />
+                <WhatPeopleSay />
+                <Journey />
+                <Entertainment />
+                <AboutPhoenixSection />
+                <Packages />
+                <Cta />
+            </div>
         </div>
     )
 }
