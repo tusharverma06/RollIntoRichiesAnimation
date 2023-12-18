@@ -6,6 +6,9 @@ import WhatPeopleSay from '../Components/Testimonials/WhatPeopleSay'
 import Entertainment from '../Components/Entertainement/Entertainment'
 import AboutPhoenixSection from '../Components/AboutPhoenix/AboutPhoenixSection'
 import Journey from '../Components/Journey/Journey'
+import Packages from '../Components/Packages/Packages'
+import Footer from '../Components/Footer/Footer'
+import Cta from '../Components/CTA/Cta'
 
 const Home = () => {
     return (
@@ -17,6 +20,8 @@ const Home = () => {
             <Journey />
             <Entertainment />
             <AboutPhoenixSection />
+            <Packages/>
+<Cta/>
         </div>
     )
 }

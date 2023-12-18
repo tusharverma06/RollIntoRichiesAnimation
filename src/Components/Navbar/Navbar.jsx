@@ -90,7 +90,7 @@ export function Header() {
                         </Link>
                     ))}
                     {/* book now button */}
-                    <button className='flex capitalize items-center justify-center px-7 py-[14px] shadow-[0px_4px_16px_0px_rgba(0,0,0,0.40)] text-base font-bold text-bg-primary bg-[linear-gradient(90deg,#F2C75E_0%,#CE9639_100%)]'>
+                    <button className='flex capitalize items-center justify-center px-7 py-2 shadow-[0px_4px_16px_0px_rgba(0,0,0,0.40)] text-base font-bold text-bg-primary bg-[linear-gradient(90deg,#F2C75E_0%,#CE9639_100%)]'>
                         Book Now
                     </button>
                 </div>

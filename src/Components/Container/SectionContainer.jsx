@@ -3,7 +3,7 @@ import React from 'react'
 const SectionContainer = ({ heading, desc, children }) => {
     return (
         <section className="relative flex flex-col items-center justify-center w-full min-h-screen font-Cinzel bg-bg-primary">
-            <div className="flex items-center flex-col h-full justify-center w-full max-w-[2000px] px-8 py-16 sm:px-10 lg:px-16 xl:px-20 gap-20 ">
+            <div className="flex items-center flex-col h-full justify-center w-full max-w-[2000px] px-8 py-16 sm:px-10 lg:px-16 xl:px-20 gap-10 lg:gap-20 ">
 
                 {/* heading */}
                 <div className="flex flex-col items-center justify-start gap-6">
@@ -30,7 +30,8 @@ const SectionContainer = ({ heading, desc, children }) => {
                 }
             </div>
 
-        </section >)
+        </section>
+        )
 }
 
 export default SectionContainer
