@@ -6,6 +6,7 @@ import WhatPeopleSay from '../Components/Testimonials/WhatPeopleSay'
 import Entertainment from '../Components/Entertainement/Entertainment'
 import AboutPhoenixSection from '../Components/AboutPhoenix/AboutPhoenixSection'
 import Journey from '../Components/Journey/Journey'
+import Packages from '../Components/Packages/Packages'
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <Journey />
             <Entertainment />
             <AboutPhoenixSection />
+            <Packages/>
         </div>
     )
 }
