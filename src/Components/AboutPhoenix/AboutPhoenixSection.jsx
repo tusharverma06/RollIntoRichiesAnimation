@@ -53,9 +53,9 @@ const AboutPhoenixSection = () => {
             desc={'Lorem ipsum dolor sit amet consectetur. Iaculis purus lorem tempus ac enim iaculis egestas sapien commodo. Nibh congue pulvinar diam eget amet faucibus. Diam id tincidunt ipsum eget maecenas. Ultrices sed dui id urna quis sed scelerisque sem. Dignissim sed vulputate sit risus fringilla.'
             }
         >
-        <img src='/Elipse.webp' className="w-full h-full object-cover absolute z-10 " />
+            <img src='/Elipse.webp' className="absolute z-10 object-cover w-full h-full " />
 
-            <div ref={targetRef} className="flex flex-wrap z-30 items-center justify-center w-full gap-y-10 md:justify-start lg:justify-between 3xl:justify-center 3xl:gap-24">
+            <div ref={targetRef} className="z-30 flex flex-wrap items-center justify-center w-full gap-y-10 md:justify-center lg:justify-between 3xl:justify-center 3xl:gap-24">
                 {Info.map(({ title, text, img }, id) =>
                     <motion.div
                         style={{ y: top, scale: scaleText, }}
