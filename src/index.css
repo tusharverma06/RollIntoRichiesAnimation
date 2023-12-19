@@ -44,7 +44,7 @@
 }
 
 .wheel {
-  animation: rotate 5s linear infinite;
+  animation: rotate 7s linear infinite;
   /* animation-delay: 0.2s; */
 }
 
