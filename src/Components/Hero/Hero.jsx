@@ -18,7 +18,7 @@ import RightCoin from '../../assets/coinRight.svg'
 import BlurredCoin from '../../assets/blurreCoin.svg'
 import BronzeCoin from '../../assets/leftBronzeCoin.svg'
 import GoldCoin from '../../assets/goldenCoinRight.svg'
-import WheelArrow from '../../assets/WheelArrow.svg'
+import WheelArrow from '../../assets/wheelArrow.svg'
 
 const Hero = () => {
     const vidRef = useRef()
