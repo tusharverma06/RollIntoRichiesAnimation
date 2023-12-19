@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRef } from 'react'
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { useScroll, useTransform, motion } from 'framer-motion'
 import BgVideo from '../../assets/bgVideo.mp4'
-import Wheel from '../../assets/wheel.svg'
+import Wheel from '../../assets/chakra.webp'
 import VerticalPheonixCasino from '../../assets/pheonixCasinoGoaVertical.svg'
 import HeartCardA from '../../assets/cardHeartA.svg'
 import SpadeLeftCard from '../../assets/cardSpadeLeftA.svg'
@@ -11,15 +11,20 @@ import DiamondCardA from '../../assets/cardDiamondA.svg'
 import SpadeRightCard from '../../assets/cardSpadeA.svg'
 import Curtain from '../../assets/curtain.png'
 import Heading from '../../assets/heading.svg'
+import HeadingMobile from '../../assets/headingMobile.svg'
 import BlurredDiceRight from '../../assets/goldDiceBlurred.svg'
 import BlurredDiceLeft from '../../assets/diceBlurredLeft.svg'
 import RightCoin from '../../assets/coinRight.svg'
 import BlurredCoin from '../../assets/blurreCoin.svg'
 import BronzeCoin from '../../assets/leftBronzeCoin.svg'
 import GoldCoin from '../../assets/goldenCoinRight.svg'
+import WheelArrow from '../../assets/WheelArrow.svg'
 
 const Hero = () => {
     const vidRef = useRef()
+
+    const [isShow, setIsShow] = useState(true)
+
 
     const windoWidth = useMediaQuery()
     // Framer motion stuff
@@ -29,7 +34,7 @@ const Hero = () => {
         offset: ['start end', 'end start'],
     })
 
-    const top = useTransform(scrollYProgress, [0, 0.57, 0.575, 0.583, 0.585, 0.585], windoWidth < 600 ? ['39%', '39%', '39%', '39%', '70%', '70%'] : ['19%', '19%', '19%', '19%', '60%', '60%'])
+    const top = useTransform(scrollYProgress, [0, 0.57, 0.575, 0.583, 0.585, 0.585], windoWidth < 600 ? ['35%', '35%', '35%', '35%', '70%', '70%'] : ['19%', '19%', '19%', '19%', '60%', '60%'])
     const scaleText = useTransform(scrollYProgress, [0, 0.57, 0.575, 0.580, 0.585,], ['1', '1', 1, '1', '1'])
     const display = useTransform(scrollYProgress, [0, 0.54, 0.583, 0.585], ['block', 'block', 'block', 'none'])
     // const displayAfterLogo = useTransform(scrollYProgress, [0, 0.580, 0.59, 0.59], ['none', 'none', 'block', 'block'])
@@ -40,26 +45,57 @@ const Hero = () => {
     const scaleAfterLogo = useTransform(scrollYProgress, [0, 0.54, 0.582, 0.585, 0.585], ['0.4', 0.8, '0.8', 1, '1'])
     const opacityAfterLogo = useTransform(scrollYProgress, [0, 0.582, 0.585, 0.585], ['0', '0', 1, '1'])
 
+    useEffect(() => {
+        if (isShow) {
+            setTimeout(() => {
+                setIsShow(false)
+            }, 1800)
+        }
+    }, [])
     return (
-        <section ref={targetRef} className="w-full h-[350vh] relative no-scrollbar">
+        <section ref={targetRef} className="w-full h-[250vh] sm:h-[350vh] relative no-scrollbar">
 
             <motion.div className='sticky top-0 right-0 flex items-start justify-start w-full h-screen no-scrollbar' style={{ background: background }}>
 
+
+
                 <div className='relative flex flex-col items-center justify-between w-full h-screen overflow-hidden'>
 
+                    {/* initial load */}
+                    {isShow &&
+                        <motion.div
+                            initial={{ opacity: 1 }}
+                            animate={{ opacity: [1, 0] }}
+                            exit={{ opacity: 0 }}
+                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: 0.05, delay: 1.6 } }}
+                            className="min-w-full flex items-center justify-end sm:justify-center min-h-screen bg-black z-[100] ">
+                            <motion.div
+                                initial={{ y: windoWidth < 600 ? 50 : 0, scale: 0.8 }}
+                                animate={{ y: windoWidth < 600 ? [50, 0] : [0, -140], scale: [0.8, 1] }}
+                                exit={{ y: 50, scale: 0.4 }}
+                                transition={{
+                                    duration: 0.5, ease: "linear",
+                                    y: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: 1.2 },
+                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: 1.2 },
+                                }}
+                                className={`relative flex flex-col items-center justify-center gap-4 `}>
+                                <img src={windoWidth < 600 ? HeadingMobile : Heading} alt="" className='w-11/12 max-w-max z-[120] ' />
+                            </motion.div>
+                        </motion.div>
+                    }
                     {/* heading */}
                     <motion.div
-                        initial={{ y: 50, scale: 0.6 }}
-                        animate={{ y: [-200, 0], scale: [0.6, 1] }}
+                        initial={{ y: 100, scale: 0.6 }}
+                        animate={{ y: [100, 0], scale: [0.8, 1] }}
                         exit={{ y: 50, scale: 0.4 }}
                         style={{ top, scale: scaleText }}
                         transition={{
                             duration: 0.5, ease: "easeInOut",
-                            // top: { type: "spring", stiffness: 100, damping: 60, duration: 0.5 },
+                            // y: { type: "spring", stiffness: 100, damping: 60, duration: 0.2, delay: 1 },
                         }}
 
-                        className="relative z-50 flex flex-col items-center justify-center gap-4 transition-all duration-[600ms]">
-                        <img src={Heading} alt="" className='w-11/12 max-w-max' />
+                        className={`relative ${isShow ? 'z-[120]' : 'z-50'}  flex flex-col items-center justify-center gap-4 transition-all duration-[600ms]`}>
+                        <img src={windoWidth < 600 ? HeadingMobile : Heading} alt="" className='w-11/12 max-w-max z-[120] ' />
                     </motion.div>
 
                     {/* background video */}
@@ -118,7 +154,7 @@ const Hero = () => {
                     <motion.div
                         transition={{ duration: 0.8, ease: "easeInOut" }}
                         style={{ display }}
-                        className='relative max-w-4xl'
+                        className='relative max-w-[830px]'
                     >
 
                         {/* cards on left side */}
@@ -130,7 +166,7 @@ const Hero = () => {
                             // animate={{ opacity: 1 }}
                             style={{ display }}
                             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
-                            className=' -left-[0%]  w-[120px] sm:w-[200px] bottom-[calc(0%-40px)] h-[120px] sm:h-[200px]  lg:w-[226px] lg:h-[226px] z-[35] absolute '
+                            className='left-[-2%] sm:-left-[8%] lg:-left-[18%]   w-[120px] sm:w-[200px] bottom-[calc(0%-40px)] h-[120px] sm:h-[200px]  lg:w-[226px] lg:h-[226px] z-[35] absolute '
                         >
                             <img src={SpadeLeftCard} className='w-full h-full' alt="" />
                         </motion.div>
@@ -143,13 +179,19 @@ const Hero = () => {
                             // animate={{ opacity: 1 }}
                             style={{ display }}
                             transition={{ duration: 0.6, ease: "easeInOut" }}
-                            className=' left-[3%]  w-[120px] sm:w-[220px] bottom-[calc(0%-10px)] h-[120px] sm:h-[220px]  lg:w-[266px] lg:h-[266px] z-40 absolute '
+                            className=' left-[0%] sm:left-[-6%] lg:-left-[14%]   w-[120px] sm:w-[220px] bottom-[calc(0%-10px)] h-[120px] sm:h-[220px]  lg:w-[266px] lg:h-[266px] z-40 absolute '
                         >
                             <img src={HeartCardA} className='w-full h-full' alt="" />
                         </motion.div>
 
-                        {/* wheel image */}
-                        <img src={Wheel} className='relative z-30 w-full h-full' alt="" />
+                        <div className="relative">
+
+                            {/* wheel Arrow */}
+                            <img src={WheelArrow} className='absolute z-50 -translate-x-1/2 left-1/2 lg:bottom-[38%] bottom-[38%] sm:bottom-[44%] w-16 ' alt="" />
+
+                            {/* wheel image */}
+                            <img src={Wheel} className='relative z-30 w-[350px] wheel bottom-[-100px] sm:bottom-[-150px] lg:bottom-[-180px] sm:w-[550px] ' alt="" />
+                        </div>
 
                         {/* cards on right side */}
                         {/*  A spade card right*/}
@@ -160,7 +202,7 @@ const Hero = () => {
                             // animate={{ opacity: 1 }}
                             style={{ display }}
                             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
-                            className=' -right-[0%]  w-[120px] sm:w-[200px] bottom-[calc(0%-40px)] h-[120px] sm:h-[200px]  lg:w-[206px] lg:h-[206px] z-[45] absolute '
+                            className=' -right-[6%] lg:-right-[14%]   w-[120px] sm:w-[200px] bottom-[calc(0%-40px)] h-[120px] sm:h-[200px]  lg:w-[206px] lg:h-[206px] z-[45] absolute '
                         >
                             <img src={SpadeRightCard} className='w-full h-full' alt="" />
                         </motion.div>
@@ -173,7 +215,7 @@ const Hero = () => {
                             // animate={{ opacity: 1 }}
                             style={{ display }}
                             transition={{ duration: 0.6, ease: "easeInOut" }}
-                            className=' right-[3%]  w-[120px] sm:w-[220px] bottom-[calc(0%-10px)] h-[120px] sm:h-[220px]  lg:w-[250px] lg:h-[250px] z-40 absolute '
+                            className=' right-[3%] lg:right-[-6%]   w-[120px] sm:w-[220px] bottom-[calc(0%-10px)] h-[120px] sm:h-[220px]  lg:w-[250px] lg:h-[250px] z-40 absolute '
                         >
                             <img src={DiamondCardA} className='w-full h-full' alt="" />
                         </motion.div>
