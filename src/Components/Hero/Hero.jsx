@@ -44,14 +44,21 @@ const Hero = () => {
     const yAfterLogo = useTransform(scrollYProgress, [0, 0.54, 0.55, 0.582, 0.585, 0.585, 0.585], ['200px', '200px', '200px', '200px', '0px', '0px', '0px'])
     const scaleAfterLogo = useTransform(scrollYProgress, [0, 0.54, 0.582, 0.585, 0.585], ['0.4', 0.8, '0.8', 1, '1'])
     const opacityAfterLogo = useTransform(scrollYProgress, [0, 0.582, 0.585, 0.585], ['0', '0', 1, '1'])
-
     useEffect(() => {
         if (isShow) {
-            setTimeout(() => {
-                setIsShow(false)
-            }, 1800)
+            if (windoWidth < 600) {
+                setTimeout(() => {
+                    setIsShow(false);
+                }, 6000);
+            } else {
+                setTimeout(() => {
+                    setIsShow(false);
+                }, 1600);
+            }
         }
-    }, [])
+    }, [isShow, windoWidth]);
+
+
     return (
         <section ref={targetRef} className="w-full h-[250vh] sm:h-[350vh] relative no-scrollbar">
 
@@ -67,19 +74,23 @@ const Hero = () => {
                             initial={{ opacity: 1 }}
                             animate={{ opacity: [1, 0] }}
                             exit={{ opacity: 0 }}
-                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: 0.05, delay: 1.6 } }}
+                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: windoWidth < 600 ? 0.2 : 0.05, delay: windoWidth < 600 ? 3.6 : 1.6 } }}
                             className="min-w-full flex items-center justify-end sm:justify-center min-h-screen bg-black z-[100] ">
                             <motion.div
                                 initial={{ y: windoWidth < 600 ? 50 : 0, scale: 0.8 }}
-                                animate={{ y: windoWidth < 600 ? [50, 0] : [0, -140], scale: [0.8, 1] }}
+                                animate={{ y: windoWidth < 600 ? [50, -20] : [0, -140], scale: [0.8, 1] }}
                                 exit={{ y: 50, scale: 0.4 }}
                                 transition={{
                                     duration: 0.5, ease: "linear",
-                                    y: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: 1.2 },
-                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: 1.2 },
+                                    y: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 0.8 : 1.2 },
+                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 3.5 : 1.2 },
                                 }}
                                 className={`relative flex flex-col items-center justify-center gap-4 `}>
-                                <img src={windoWidth < 600 ? HeadingMobile : Heading} alt="" className='w-11/12 max-w-max z-[120] ' />
+                                {windoWidth < 600 ?
+                                    <img src={HeadingMobile} alt="" className='w-11/12 max-w-max z-[120] ' />
+                                    :
+                                    <img src={Heading} alt="" className='w-11/12 max-w-max z-[120] ' />
+                                }
                             </motion.div>
                         </motion.div>
                     }
