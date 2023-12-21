@@ -54,7 +54,7 @@ const Hero = () => {
             } else {
                 setTimeout(() => {
                     setIsShow(false);
-                }, 1600);
+                }, 2800);
             }
         }
     }, [isShow, windoWidth]);
@@ -74,7 +74,7 @@ const Hero = () => {
                             initial={{ opacity: 1 }}
                             animate={{ opacity: [1, 0] }}
                             exit={{ opacity: 0 }}
-                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: windoWidth < 600 ? 10.2 : 0.05, delay: windoWidth < 600 ? 13.6 : 1.6 } }}
+                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: windoWidth < 600 ? 10.2 : 0.05, delay: windoWidth < 600 ? 13.6 : 2.6 } }}
                             className="min-w-full back flex items-center justify-end sm:justify-center min-h-screen bg-black z-[100] ">
                             <motion.div
                                 initial={{ y: windoWidth < 600 ? 50 : 0, scale: 0.8 }}
@@ -82,8 +82,8 @@ const Hero = () => {
                                 exit={{ y: 50, scale: 0.4 }}
                                 transition={{
                                     duration: 0.5, ease: "linear",
-                                    y: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 1 : 1.2 },
-                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 13.5 : 1.2 },
+                                    y: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 2.1 : 2.2 },
+                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 13.5 : 2.2 },
                                 }}
                                 className={`relative flex flex-col items-center justify-center gap-4 `}>
                                 {windoWidth < 600 ?
@@ -120,6 +120,7 @@ const Hero = () => {
                             width="100%"
                             height="100%"
                             autoPlay
+                            loading="lazy"
                             loop
                             muted // Add the muted attribute
                             src={BgVideo}
