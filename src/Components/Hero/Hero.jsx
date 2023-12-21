@@ -50,7 +50,7 @@ const Hero = () => {
             if (windoWidth < 600) {
                 setTimeout(() => {
                     setIsShow(false);
-                }, 6000);
+                }, 20000);
             } else {
                 setTimeout(() => {
                     setIsShow(false);
@@ -74,16 +74,16 @@ const Hero = () => {
                             initial={{ opacity: 1 }}
                             animate={{ opacity: [1, 0] }}
                             exit={{ opacity: 0 }}
-                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: windoWidth < 600 ? 0.2 : 0.05, delay: windoWidth < 600 ? 3.6 : 1.6 } }}
-                            className="min-w-full flex items-center justify-end sm:justify-center min-h-screen bg-black z-[100] ">
+                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: windoWidth < 600 ? 10.2 : 0.05, delay: windoWidth < 600 ? 13.6 : 1.6 } }}
+                            className="min-w-full back flex items-center justify-end sm:justify-center min-h-screen bg-black z-[100] ">
                             <motion.div
                                 initial={{ y: windoWidth < 600 ? 50 : 0, scale: 0.8 }}
                                 animate={{ y: windoWidth < 600 ? [50, -20] : [0, -140], scale: [0.8, 1] }}
                                 exit={{ y: 50, scale: 0.4 }}
                                 transition={{
                                     duration: 0.5, ease: "linear",
-                                    y: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 0.8 : 1.2 },
-                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 3.5 : 1.2 },
+                                    y: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 1 : 1.2 },
+                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 13.5 : 1.2 },
                                 }}
                                 className={`relative flex flex-col items-center justify-center gap-4 `}>
                                 {windoWidth < 600 ?
@@ -106,7 +106,7 @@ const Hero = () => {
                         }}
 
                         className={`relative ${isShow ? 'z-[120]' : 'z-50'}  flex flex-col items-center justify-center gap-4 transition-all duration-[600ms]`}>
-                        <img src={windoWidth < 600 ? HeadingMobile : Heading} alt="" className='w-11/12 max-w-max z-[120] ' />
+                        <img loading="lazy" src={windoWidth < 600 ? HeadingMobile : Heading} alt="" className='w-11/12 max-w-max z-[120] ' />
                     </motion.div>
 
                     {/* background video */}
@@ -142,7 +142,7 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeIn", delay: 0.5 }}
                             className=' right-0  w-[100px]  sm:w-[156px] lg:w-[206px] xl:w-[306px] bottom-[calc(0%-0px)] h-screen z-[15] absolute '
                         >
-                            <img src={Curtain} className='w-full h-full' alt="" />
+                            <img loading="lazy" src={Curtain} className='w-full h-full' alt="" />
                         </motion.div>
 
                         {/* left curtain */}
@@ -155,7 +155,7 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeIn", delay: 0.5 }}
                             className=' left-0  w-[100px] sm:w-[156px] lg:w-[206px] xl:w-[306px] bottom-[calc(0%-0px)] h-screen z-[15] absolute '
                         >
-                            <img src={Curtain} className='w-full h-full' alt="" />
+                            <img loading="lazy" src={Curtain} className='w-full h-full' alt="" />
                         </motion.div>
 
                     </section>
@@ -179,7 +179,7 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
                             className='left-[-2%] sm:-left-[8%] lg:-left-[18%]   w-[120px] sm:w-[200px] bottom-[calc(0%-40px)] h-[120px] sm:h-[200px]  lg:w-[226px] lg:h-[226px] z-[35] absolute '
                         >
-                            <img src={SpadeLeftCard} className='w-full h-full' alt="" />
+                            <img loading="lazy" src={SpadeLeftCard} className='w-full h-full' alt="" />
                         </motion.div>
 
                         {/*  A heart card*/}
@@ -192,13 +192,13 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeInOut" }}
                             className=' left-[0%] sm:left-[-6%] lg:-left-[14%]   w-[120px] sm:w-[220px] bottom-[calc(0%-10px)] h-[120px] sm:h-[220px]  lg:w-[266px] lg:h-[266px] z-40 absolute '
                         >
-                            <img src={HeartCardA} className='w-full h-full' alt="" />
+                            <img loading="lazy" src={HeartCardA} className='w-full h-full' alt="" />
                         </motion.div>
 
                         <div className="relative">
 
                             {/* wheel Arrow */}
-                            <img src={WheelArrow} className='absolute z-50 -translate-x-1/2 left-1/2 lg:bottom-[38%] bottom-[38%] sm:bottom-[44%] w-16 ' alt="" />
+                            <img loading="lazy" src={WheelArrow} className='absolute z-50 -translate-x-1/2 left-1/2 lg:bottom-[38%] bottom-[38%] sm:bottom-[44%] w-16 ' alt="" />
 
                             {/* wheel image */}
                             <img src={Wheel} className='relative z-30 w-[350px] wheel bottom-[-100px] sm:bottom-[-150px] lg:bottom-[-180px] sm:w-[550px] ' alt="" />
@@ -215,7 +215,7 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
                             className=' -right-[6%] lg:-right-[14%]   w-[120px] sm:w-[200px] bottom-[calc(0%-40px)] h-[120px] sm:h-[200px]  lg:w-[206px] lg:h-[206px] z-[45] absolute '
                         >
-                            <img src={SpadeRightCard} className='w-full h-full' alt="" />
+                            <img loading="lazy" src={SpadeRightCard} className='w-full h-full' alt="" />
                         </motion.div>
 
                         {/*  A Diamond card*/}
@@ -228,7 +228,7 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeInOut" }}
                             className=' right-[3%] lg:right-[-6%]   w-[120px] sm:w-[220px] bottom-[calc(0%-10px)] h-[120px] sm:h-[220px]  lg:w-[250px] lg:h-[250px] z-40 absolute '
                         >
-                            <img src={DiamondCardA} className='w-full h-full' alt="" />
+                            <img loading="lazy" src={DiamondCardA} className='w-full h-full' alt="" />
                         </motion.div>
                     </motion.div>
 
@@ -237,7 +237,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' right-[3%] lg:-right-4 2xl:-right-4 bottom-[calc(0%+100px)] dice  w-[86px] sm:w-[206px] lg:w-[266px]  h-[76px] sm:h-[206px] lg:h-[266px] z-40 absolute '
                     >
-                        <img src={BlurredDiceRight} className='w-full h-full' alt="" />
+                        <img loading="lazy" src={BlurredDiceRight} className='w-full h-full' alt="" />
                     </motion.div>
 
                     {/*blurred dice left*/}
@@ -245,7 +245,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' left-[-2%] lg:left-[0%] 2xl:left-[0%] lg:bottom-[calc(0%+80px)] dice bottom-[calc(0%+120px)]  w-[86px] sm:w-[182px] lg:w-[212px]  h-[76px] sm:h-[182px] lg:h-[212px] z-40 absolute '
                     >
-                        <img src={BlurredDiceLeft} className='w-full h-full' alt="" />
+                        <img loading="lazy" src={BlurredDiceLeft} className='w-full h-full' alt="" />
                     </motion.div>
 
 
@@ -254,7 +254,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' right-[6%] lg:right-[8%] 2xl:right-[12%] bottom-[calc(0%+220px)]  coin w-auto sm:w-[175px] lg:w-[225px]  h-[76px] sm:h-[170px] lg:h-[219px] z-40 absolute '
                     >
-                        <img src={RightCoin} className='w-full h-full scale-150 sm:scale-0' alt="" />
+                        <img loading="lazy" src={RightCoin} className='w-full h-full scale-150 sm:scale-0' alt="" />
                     </motion.div>
 
                     {/*blurred coin right*/}
@@ -262,7 +262,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' right-[5%] lg:right-[3%] 2xl:right-[3%] bottom-[calc(0%+450px)]   w-[86px] sm:w-[75px] lg:w-[115px]  h-[76px] sm:h-[70px] lg:h-[119px] z-40 absolute '
                     >
-                        <img src={BlurredCoin} className='w-full h-full' alt="" />
+                        <img loading="lazy" src={BlurredCoin} className='w-full h-full' alt="" />
                     </motion.div>
 
                     {/*goldish bronze coin right*/}
@@ -270,7 +270,7 @@ const Hero = () => {
                         style={{ display }}
                         className='right-[-6%] sm:right-[-2%] bottom-[calc(0%+450px)]   w-[86px] sm:w-[75px] lg:w-[115px]  h-[76px] sm:h-[70px] lg:h-[119px] z-40 absolute '
                     >
-                        <img src={GoldCoin} className='w-full h-full' alt="" />
+                        <img loading="lazy" src={GoldCoin} className='w-full h-full' alt="" />
                     </motion.div>
 
                     {/* bronze coin right */}
@@ -278,7 +278,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' right-[-1%] lg:right-[-1%] 2xl:right-[-1%] sm:bottom-[calc(0%+350px)] bottom-[calc(0%+160px)]   w-[91px]   h-[83px]  z-40 absolute '
                     >
-                        <img src={BronzeCoin} className='w-full h-full' alt="" />
+                        <img loading="lazy" src={BronzeCoin} className='w-full h-full' alt="" />
                     </motion.div>
 
                     {/*coin left*/}
@@ -286,7 +286,7 @@ const Hero = () => {
                         style={{ display, }}
                         className=' left-[6%]  lg:left-[8%] 2xl:left-[12%] bottom-[calc(0%+180px)]  coin w-[86px] sm:w-[125px] lg:w-[168px]  h-[76px] sm:h-[120px] lg:h-[163px] z-40 absolute '
                     >
-                        <img style={{ rotateY: 180 }} src={RightCoin} className='w-full h-full scale-150 sm:scale-0' alt="" />
+                        <img loading="lazy" style={{ rotateY: 180 }} src={RightCoin} className='w-full h-full scale-150 sm:scale-0' alt="" />
                     </motion.div>
 
 
@@ -295,7 +295,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' left-[-5%] lg:left-[-3%] 2xl:left-[0%] bottom-[calc(0%+450px)] sm:bottom-[calc(0%+300px)]   w-[86px] sm:w-[75px] lg:w-[115px]  h-[76px] sm:h-[70px] lg:h-[119px] z-40 absolute '
                     >
-                        <img src={BlurredCoin} className='w-full rotate-[-60deg]  h-full' alt="" />
+                        <img loading="lazy" src={BlurredCoin} className='w-full rotate-[-60deg]  h-full' alt="" />
                     </motion.div>
 
                     {/*goldish bronze coin left*/}
@@ -303,7 +303,7 @@ const Hero = () => {
                         style={{ display }}
                         className='left-[-6%] sm:left-[0%] bottom-[calc(0%+520px)] sm:bottom-[calc(0%+420px)]   w-[46px] h-[38px]  z-40 absolute '
                     >
-                        <img src={GoldCoin} className='w-full h-full' alt="" />
+                        <img loading="lazy" src={GoldCoin} className='w-full h-full' alt="" />
                     </motion.div>
 
                     {/* bronze coin left */}
@@ -311,7 +311,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' left-[0%] sm:left-[5%] bottom-[calc(0%+240px)] sm:bottom-[calc(0%+420px)]  w-[91px]   h-[83px]  z-40 absolute '
                     >
-                        <img src={BronzeCoin} className='w-full h-full' alt="" />
+                        <img loading="lazy" src={BronzeCoin} className='w-full h-full' alt="" />
                     </motion.div>
 
 
