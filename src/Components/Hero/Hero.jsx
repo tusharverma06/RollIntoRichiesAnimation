@@ -50,17 +50,18 @@ const Hero = () => {
             if (windoWidth < 600) {
                 setTimeout(() => {
                     setIsShow(false);
-                }, 20000);
+                }, 40000);
             } else {
                 setTimeout(() => {
                     setIsShow(false);
                 }, 2800);
             }
         }
+
     }, [isShow, windoWidth]);
 
     return (
-        <section ref={targetRef} className="w-full h-[250vh] sm:h-[350vh] relative no-scrollbar">
+        <section ref={targetRef} className="w-full h-[220vh] sm:h-[350vh] relative no-scrollbar">
 
             <motion.div className='sticky top-0 right-0 flex items-start justify-start w-full h-screen no-scrollbar' style={{ background: background }}>
 
@@ -74,7 +75,7 @@ const Hero = () => {
                             initial={{ opacity: 1 }}
                             animate={{ opacity: [1, 0] }}
                             exit={{ opacity: 0 }}
-                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: windoWidth < 600 ? 10.2 : 0.05, delay: windoWidth < 600 ? 13.6 : 2.6 } }}
+                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: windoWidth < 600 ? 10.2 : 0.05, delay: windoWidth < 600 ? 23.6 : 2.6 } }}
                             className="min-w-full back flex items-center justify-end sm:justify-center min-h-screen bg-black z-[100] ">
                             <motion.div
                                 initial={{ y: windoWidth < 600 ? 50 : 0, scale: 0.8 }}
@@ -82,8 +83,8 @@ const Hero = () => {
                                 exit={{ y: 50, scale: 0.4 }}
                                 transition={{
                                     duration: 0.5, ease: "linear",
-                                    y: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 2.1 : 2.2 },
-                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 13.5 : 2.2 },
+                                    y: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 2.2 : 2.2 },
+                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 23.5 : 2.2 },
                                 }}
                                 className={`relative flex flex-col items-center justify-center gap-4 `}>
                                 {windoWidth < 600 ?
@@ -106,7 +107,7 @@ const Hero = () => {
                         }}
 
                         className={`relative ${isShow ? 'z-[120]' : 'z-50'}  flex flex-col items-center justify-center gap-4 transition-all duration-[600ms]`}>
-                        <img loading="lazy" src={windoWidth < 600 ? HeadingMobile : Heading} alt="" className='w-11/12 max-w-max z-[120] ' />
+                        <img src={windoWidth < 600 ? HeadingMobile : Heading} alt="" className='w-11/12 max-w-max z-[120] ' />
                     </motion.div>
 
                     {/* background video */}
