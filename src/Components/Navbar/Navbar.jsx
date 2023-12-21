@@ -45,7 +45,7 @@ export function Header() {
     }, []);
 
     return (
-        <header className={`py-[30px] fixed top-0 right-0 w-full px-16 sm:px-36 lg:px-40 xl:px-60 items-center z-50 flex justify-center transition-all duration-500 ease-in-out ${scrolled ? 'bg-bg-primary shadow-xl drop-shadow-2xl' : 'bg-transparent'}`}>
+        <header className={`py-[30px] fixed top-0 right-0 w-full px-8 sm:px-36 lg:px-40 xl:px-60 items-center z-50 flex justify-center transition-all duration-500 ease-in-out ${scrolled ? 'bg-bg-primary shadow-xl drop-shadow-2xl' : 'bg-transparent'}`}>
             <nav className="relative z-50 flex flex-col items-center justify-between w-full md:flex-row">
                 <div className="flex items-center justify-between w-full lg:w-auto">
                     {/* Logo */}

@@ -31,12 +31,12 @@ const Experience = () => {
 
     return (
         <SectionContainer heading={'About our Golden Experience'} desc={'Lorem ipsum dolor sit amet consectetur. Morbi varius consectetur blandit ut quis eget eu tellus. Quam morbi tempus odio sem in adipiscing consectetur odio lobortis. Enim urna gravida eleifend bibendum arcu nunc.'}>
-            <div className="flex flex-wrap items-center justify-center w-full overflow-hidden h-full md:justify-start lg:justify-between 3xl:justify-center 3xl:gap-24">
+            <div className="flex flex-wrap items-center justify-center w-full h-full overflow-hidden md:justify-start lg:justify-between 3xl:justify-center 3xl:gap-24">
                 {Experiences.map(({ title, text, vid }, id) => <ExperienceContainer text={text} title={title} vid={vid} key={id} />)}
             </div>
 
             {/* gradient right */}
-           <img src='/Elipse2.webp' className='w-full h-full object-cover  lg:block hidden absolute -left-96'></img>
+            <img src='/Elipse2.webp' loading="lazy" className='absolute hidden object-cover w-full h-full lg:block -left-96'></img>
 
             {/* gradient left */}
             {/* <img

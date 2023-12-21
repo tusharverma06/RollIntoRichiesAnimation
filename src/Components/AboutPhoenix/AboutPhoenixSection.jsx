@@ -62,7 +62,7 @@ const AboutPhoenixSection = () => {
                         key={id} className="flex transition-all duration-300 ease-linear flex-col font-Cinzel lg:w-[calc(100%/4-40px)] md:w-[calc(100%/2-32px)] w-full items-center justify-start max-w-[300px] gap-5 px-2 ">
                         {/* img,heading */}
                         <div className="flex flex-col items-center justify-start w-full gap-4">
-                            <img src={img} alt='' />
+                            <img src={img} loading="lazy" alt='' />
                             <h1 className="text-base font-bold text-white font-Cinzel lg:text-xl">{title}</h1>
                         </div>
                         {/* one liner */}

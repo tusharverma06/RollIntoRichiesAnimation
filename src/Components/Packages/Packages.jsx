@@ -43,7 +43,7 @@ const Packages = () => {
                       <p className="font-Cinzel">₹3500</p>
                     </div>
                   </div>
-                  <img src="/Cube.webp" alt="" className="absolute right-0 w-2/5 -bottom-5" />
+                  <img src="/Cube.webp" loading="lazy" alt="" className="absolute right-0 w-2/5 -bottom-5" />
                 </div>
               </div>
               <div className="p-2 lg:p-4 lg:w-1/3 w-full sm:w-3/4 h-[450px] lg:h-[600px]">
@@ -79,7 +79,7 @@ const Packages = () => {
                       <p className="font-Cinzel">₹3500</p>
                     </div>
                   </div>
-                  <img src="/Coin.webp" alt="" className="absolute bottom-0 right-0 w-2/5" />
+                  <img src="/Coin.webp" loading="lazy" alt="" className="absolute bottom-0 right-0 w-2/5" />
                 </div>
               </div>
               <div className="p-2 lg:p-4 lg:w-1/3 w-full sm:w-3/4 h-[450px] lg:h-[590px]">
@@ -116,7 +116,7 @@ const Packages = () => {
                       <p className="font-Cinzel">₹3500</p>
                     </div>
                   </div>
-                  <img src="/FlatCoin.webp" alt="" className="absolute bottom-0 right-0 w-2/5" />
+                  <img src="/FlatCoin.webp" alt="" loading="lazy" className="absolute bottom-0 right-0 w-2/5" />
                 </div>
               </div>
             </div>
