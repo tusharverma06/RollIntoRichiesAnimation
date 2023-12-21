@@ -120,7 +120,6 @@ const Hero = () => {
                             width="100%"
                             height="100%"
                             autoPlay
-                            loading="lazy"
                             loop
                             muted // Add the muted attribute
                             src={BgVideo}
