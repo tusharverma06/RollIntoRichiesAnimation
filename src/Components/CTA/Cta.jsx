@@ -26,15 +26,15 @@ const Cta = () => {
         </button>
 
         {/* all objects */}
-        <img src={Object} className="absolute top-0 right-0 z-10 hidden w-full h-full max-w-full md:block " alt="" />
+        <img loading="lazy" src={Object} className="absolute top-0 right-0 z-10 hidden w-full h-full max-w-full md:block " alt="" />
 
         {/* adding a layer in small width devices */}
         <div className="absolute top-0 right-0 z-20 hidden w-full h-full bg-bg-primary/40 md:block lg:hidden " alt="" ></div>
 
         {/* curved cards for mobile */}
-        <img src={Heart} className="absolute top-0 -left-2 z-10 block w-[80px] h-[80px] md:hidden " alt="" />
+        <img loading="lazy" src={Heart} className="absolute top-0 -left-2 z-10 block w-[80px] h-[80px] md:hidden " alt="" />
         {/* curved spade card for mobile */}
-        <img src={Spade} className="absolute bottom-4 -right-2 z-10 block w-[90px] h-[90px] md:hidden " alt="" />
+        <img loading="lazy" src={Spade} className="absolute bottom-4 -right-2 z-10 block w-[90px] h-[90px] md:hidden " alt="" />
       </div>
 
     </div>

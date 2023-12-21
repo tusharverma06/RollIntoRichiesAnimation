@@ -1,8 +1,8 @@
 import React from 'react'
 import SectionContainer from '../Container/SectionContainer'
-import Entertainment1 from '../../assets/Entertainment/Entertainment1.png'
-import Entertainment2 from '../../assets/Entertainment/Entertainment2.png'
-import Entertainment3 from '../../assets/Entertainment/Entertainment3.png'
+import Entertainment1 from '../../assets/Entertainment/Entertainment1.webp'
+import Entertainment2 from '../../assets/Entertainment/Entertainment2.webp'
+import Entertainment3 from '../../assets/Entertainment/Entertainment3.webp'
 import Carousel from '../Testimonials/Carousel'
 
 const Entertainment = () => {
@@ -51,7 +51,7 @@ const Entertainment = () => {
             <Carousel scrollDirection='right'>
                 {EntertainmentImages.map(({ Img, title }, id) => (
                     <div className="flex flex-col items-start gap-3 min-w-full sm:min-w-[400px] max-h-[400px] lg:min-w-[620px] " key={id}>
-                        <img src={Img} alt="" className='w-full sm:max-h-[240px] max-h-[185px] lg:max-h-[400px]' />
+                        <img src={Img} loading="lazy" alt="" className='w-full sm:max-h-[240px] max-h-[185px] lg:max-h-[400px]' />
 
                         <span className="text-lg font-normal text-white lg:text-2xl">
                             {title}

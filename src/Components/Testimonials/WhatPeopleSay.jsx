@@ -41,7 +41,7 @@ const WhatPeopleSay = () => {
     ]
     return (
         <SectionContainer heading={'What People say'} desc={'Lorem ipsum dolor sit amet consectetur. Morbi varius consectetur blandit ut quis eget eu tellus. Quam morbi tempus odio sem in adipiscing consectetur odio lobortis. Enim urna gravida eleifend.'}>
-            <div className="flex flex-col items-center justify-start w-full gap-6 z-20">
+            <div className="z-20 flex flex-col items-center justify-start w-full gap-6">
 
                 {/* towards right */}
                 <Carousel scrollDirection='right'>
@@ -49,7 +49,7 @@ const WhatPeopleSay = () => {
                         <Testimonial key={id} name={name} message={title} />
                     ))}
                 </Carousel>
-<img src='/Ellipse3.webp' className='w-full h-full absolute bottom-20 lg:block hidden z-10'/>
+                <img src='/Ellipse3.webp' loading="lazy" className='absolute z-10 hidden w-full h-full bottom-20 lg:block' />
                 {/* towards left */}
                 <Carousel scrollDirection='left'>
                     {PeopleReviews.map(({ name, title }, id) => (

@@ -51,42 +51,42 @@ const Carousel = ({ images }) => {
 
 
 const Gallery = () => {
-        const images = [
-          'https://bigdaddy.in/wp-content/uploads/2023/07/bd-cb4.jpg',
-          'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png',
-          'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png', // Repeated for the sake of the example
-          'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png',
-          'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png',
-          'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png',
-          'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png'
-        ];
+    const images = [
+        'https://bigdaddy.in/wp-content/uploads/2023/07/bd-cb4.jpg',
+        'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png',
+        'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png', // Repeated for the sake of the example
+        'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png',
+        'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png',
+        'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png',
+        'https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png'
+    ];
 
- 
+
     return (
 
-<SectionContainer heading={'GALLERY'} desc={'Lorem ipsum dolor sit amet consectetur. Morbi varius consectetur blandit ut quis eget eu tellus. Quam morbi tempus odio sem in adipiscing consectetur odio lobortis. Enim urna gravida eleifend bibendum arcu nunc.'}>
-<img src='/Elipse.webp' className="w-full h-[650px] object-cover absolute z-10" />
+        <SectionContainer heading={'GALLERY'} desc={'Lorem ipsum dolor sit amet consectetur. Morbi varius consectetur blandit ut quis eget eu tellus. Quam morbi tempus odio sem in adipiscing consectetur odio lobortis. Enim urna gravida eleifend bibendum arcu nunc.'}>
+            <img loading="lazy" src='/Elipse.webp' className="w-full h-[650px] object-cover absolute z-10" />
 
 
-<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 z-20 justify-center items-center gap-7'>
-    <div>
-        <img src='https://bigdaddy.in/wp-content/uploads/2023/07/bd-cb4.jpg' className="w-full h-auto" />
-    </div>
-    <div className='flex flex-col gap-5'>
-        <div><img src='https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png' className="w-full h-[250px] object-cover" /></div>
-        <div><img src='https://bigdaddy.in/wp-content/uploads/2023/07/bg-gl1.jpg' className="w-full h-[250px] object-cover" /></div>
-    </div>
-    <div>
-        <img src='https://bigdaddy.in/wp-content/uploads/2023/05/04-3.png' className="w-full h-[650px] object-cover" />
-    </div>
-    <div className='flex flex-col gap-5'>
-        <div><img src='https://bigdaddy.in/wp-content/uploads/2023/07/bg-gl2.jpg' className="w-full h-[250px] object-cover" /></div>
-        <div><img src='https://bigdaddy.in/wp-content/uploads/2023/05/09-2.png' className="w-full h-[250px] object-cover" /></div>
-    </div>
-    <div>
-        <img src='https://bigdaddy.in/wp-content/uploads/2023/07/bg-gl3.jpg' className="w-full h-auto" />
-    </div>
-</div>
+            <div className='z-20 grid items-center justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-7'>
+                <div>
+                    <img loading="lazy" src='https://bigdaddy.in/wp-content/uploads/2023/07/bd-cb4.jpg' className="w-full h-auto" />
+                </div>
+                <div className='flex flex-col gap-5'>
+                    <div><img loading="lazy" src='https://bigdaddy.in/wp-content/uploads/2023/05/02-1.png' className="w-full h-[250px] object-cover" /></div>
+                    <div><img loading="lazy" src='https://bigdaddy.in/wp-content/uploads/2023/07/bg-gl1.jpg' className="w-full h-[250px] object-cover" /></div>
+                </div>
+                <div>
+                    <img loading="lazy" src='https://bigdaddy.in/wp-content/uploads/2023/05/04-3.png' className="w-full h-[650px] object-cover" />
+                </div>
+                <div className='flex flex-col gap-5'>
+                    <div><img loading="lazy" src='https://bigdaddy.in/wp-content/uploads/2023/07/bg-gl2.jpg' className="w-full h-[250px] object-cover" /></div>
+                    <div><img loading="lazy" src='https://bigdaddy.in/wp-content/uploads/2023/05/09-2.png' className="w-full h-[250px] object-cover" /></div>
+                </div>
+                <div>
+                    <img loading="lazy" src='https://bigdaddy.in/wp-content/uploads/2023/07/bg-gl3.jpg' className="w-full h-auto" />
+                </div>
+            </div>
         </SectionContainer>
 
     )

@@ -6,7 +6,7 @@ const Testimonial = ({ message, name }) => {
             <h4 className="w-full max-w-md text-sm font-normal text-white md:text-base text-start lg:text-xl">{message}</h4>
 
             <div className="flex items-center justify-start w-full gap-5">
-                <img src={ProfileIcon} alt="" />
+                <img src={ProfileIcon} loading="lazy" alt="" />
                 <h4 className="text-base font-normal text-center text-white lg:text-xl">{name}</h4>
             </div>
         </div>

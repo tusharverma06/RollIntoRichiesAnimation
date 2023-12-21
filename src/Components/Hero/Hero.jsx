@@ -9,9 +9,9 @@ import HeartCardA from '../../assets/cardHeartA.svg'
 import SpadeLeftCard from '../../assets/cardSpadeLeftA.svg'
 import DiamondCardA from '../../assets/cardDiamondA.svg'
 import SpadeRightCard from '../../assets/cardSpadeA.svg'
-import Curtain from '../../assets/curtain.png'
-import Heading from '../../assets/heading.svg'
-import HeadingMobile from '../../assets/headingMobile.svg'
+import Curtain from '../../assets/curtain.webp'
+import Heading from '../../assets/heading.webp'
+import HeadingMobile from '../../assets/headingMobile.webp'
 import BlurredDiceRight from '../../assets/goldDiceBlurred.svg'
 import BlurredDiceLeft from '../../assets/diceBlurredLeft.svg'
 import RightCoin from '../../assets/coinRight.svg'
@@ -44,6 +44,7 @@ const Hero = () => {
     const yAfterLogo = useTransform(scrollYProgress, [0, 0.54, 0.55, 0.582, 0.585, 0.585, 0.585], ['200px', '200px', '200px', '200px', '0px', '0px', '0px'])
     const scaleAfterLogo = useTransform(scrollYProgress, [0, 0.54, 0.582, 0.585, 0.585], ['0.4', 0.8, '0.8', 1, '1'])
     const opacityAfterLogo = useTransform(scrollYProgress, [0, 0.582, 0.585, 0.585], ['0', '0', 1, '1'])
+
     useEffect(() => {
         if (isShow) {
             if (windoWidth < 600) {
@@ -57,7 +58,6 @@ const Hero = () => {
             }
         }
     }, [isShow, windoWidth]);
-
 
     return (
         <section ref={targetRef} className="w-full h-[250vh] sm:h-[350vh] relative no-scrollbar">
@@ -130,7 +130,7 @@ const Hero = () => {
 
 
                     {/* curtains */}
-                    <section className="flex items-start justify-between w-full">
+                    <section className="items-start justify-between hidden w-full sm:flex">
 
                         {/* right curtain */}
                         <motion.div
@@ -252,9 +252,9 @@ const Hero = () => {
                     {/*coin right*/}
                     <motion.div
                         style={{ display }}
-                        className=' right-[6%] lg:right-[8%] 2xl:right-[12%] bottom-[calc(0%+220px)]  coin w-[86px] sm:w-[175px] lg:w-[225px]  h-[76px] sm:h-[170px] lg:h-[219px] z-40 absolute '
+                        className=' right-[6%] lg:right-[8%] 2xl:right-[12%] bottom-[calc(0%+220px)]  coin w-auto sm:w-[175px] lg:w-[225px]  h-[76px] sm:h-[170px] lg:h-[219px] z-40 absolute '
                     >
-                        <img src={RightCoin} className='w-full h-full' alt="" />
+                        <img src={RightCoin} className='w-full h-full scale-150 sm:scale-0' alt="" />
                     </motion.div>
 
                     {/*blurred coin right*/}
@@ -286,7 +286,7 @@ const Hero = () => {
                         style={{ display, }}
                         className=' left-[6%]  lg:left-[8%] 2xl:left-[12%] bottom-[calc(0%+180px)]  coin w-[86px] sm:w-[125px] lg:w-[168px]  h-[76px] sm:h-[120px] lg:h-[163px] z-40 absolute '
                     >
-                        <img style={{ rotateY: 180 }} src={RightCoin} className='w-full h-full' alt="" />
+                        <img style={{ rotateY: 180 }} src={RightCoin} className='w-full h-full scale-150 sm:scale-0' alt="" />
                     </motion.div>
 
 
