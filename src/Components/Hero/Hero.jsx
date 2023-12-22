@@ -50,7 +50,7 @@ const Hero = () => {
             if (windoWidth < 600) {
                 setTimeout(() => {
                     setIsShow(false);
-                }, 40000);
+                }, 60000);
             } else {
                 setTimeout(() => {
                     setIsShow(false);
@@ -75,7 +75,7 @@ const Hero = () => {
                             initial={{ opacity: 1 }}
                             animate={{ opacity: [1, 0] }}
                             exit={{ opacity: 0 }}
-                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: windoWidth < 600 ? 10.2 : 0.05, delay: windoWidth < 600 ? 23.6 : 2.6 } }}
+                            transition={{ opacity: { type: "spring", stiffness: 400, damping: 80, duration: windoWidth < 600 ? 10.2 : 0.05, delay: windoWidth < 600 ? 53.6 : 2.6 } }}
                             className="min-w-full back flex items-center justify-end sm:justify-center min-h-screen bg-black z-[100] ">
                             <motion.div
                                 initial={{ y: windoWidth < 600 ? 50 : 0, scale: 0.8 }}
@@ -84,7 +84,7 @@ const Hero = () => {
                                 transition={{
                                     duration: 0.5, ease: "linear",
                                     y: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 2.2 : 2.2 },
-                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 23.5 : 2.2 },
+                                    scale: { type: "spring", stiffness: 400, damping: 80, duration: 0.4, delay: windoWidth < 600 ? 43.5 : 2.2 },
                                 }}
                                 className={`relative flex flex-col items-center justify-center gap-4 `}>
                                 {windoWidth < 600 ?
@@ -255,7 +255,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' right-[6%] lg:right-[8%] 2xl:right-[12%] bottom-[calc(0%+220px)]  coin w-auto sm:w-[175px] lg:w-[225px]  h-[76px] sm:h-[170px] lg:h-[219px] z-40 absolute '
                     >
-                        <img loading="lazy" src={RightCoin} className='w-full h-full scale-150 sm:scale-0' alt="" />
+                        <img loading="lazy" src={RightCoin} className='w-full h-full scale-150 sm:scale-100' alt="" />
                     </motion.div>
 
                     {/*blurred coin right*/}
@@ -287,7 +287,7 @@ const Hero = () => {
                         style={{ display, }}
                         className=' left-[6%]  lg:left-[8%] 2xl:left-[12%] bottom-[calc(0%+180px)]  coin w-[86px] sm:w-[125px] lg:w-[168px]  h-[76px] sm:h-[120px] lg:h-[163px] z-40 absolute '
                     >
-                        <img loading="lazy" style={{ rotateY: 180 }} src={RightCoin} className='w-full h-full scale-150 sm:scale-0' alt="" />
+                        <img loading="lazy" style={{ rotateY: 180 }} src={RightCoin} className='w-full h-full scale-150 sm:scale-100' alt="" />
                     </motion.div>
 
 
