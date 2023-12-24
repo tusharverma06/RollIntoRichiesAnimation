@@ -24,7 +24,7 @@ const Hero = () => {
     const vidRef = useRef()
 
     const [isShow, setIsShow] = useState(true)
-    const [vidLoading, setVidLoading] = useState(true)
+    const [vidLoaded, setVidLoaded] = useState(false)
 
     const windoWidth = useMediaQuery()
     // Framer motion stuff
@@ -62,21 +62,44 @@ const Hero = () => {
 
 
     useEffect(() => {
-        if (vidRef.current) {
-            vidRef.current.onloadeddata = () => {
-                console.log('Video loaded');
-                alert('video loaded')
-                setVidLoading(true);
-            };
-        }
-    }, []); // Empty dependency array, effect runs only on mount
+        const handleVideoLoaded = () => {
+            setVidLoaded(true);
+            console.log('Video loaded');
+        };
 
+        const videoElement = vidRef.current;
+        console.log(videoElement);
+        if (videoElement) {
+            videoElement.addEventListener('loadeddata', handleVideoLoaded);
+
+            // Check if video is already loaded
+            if (videoElement.readyState >= 3) {
+                handleVideoLoaded();
+            }
+        }
+
+        return () => {
+            if (videoElement) {
+                videoElement.removeEventListener('loadeddata', handleVideoLoaded);
+            }
+        };
+    }, []);
+    console.log(vidLoaded);
     return (
         <section ref={targetRef} className="w-full h-[220vh] sm:h-[350vh] relative no-scrollbar">
 
             <motion.div className='sticky top-0 right-0 flex items-start justify-start w-full h-screen no-scrollbar' style={{ background: background }}>
 
 
+                {!vidLoaded ?
+
+                    <div
+                        className="min-w-full back flex items-center justify-center sticky top-0 sm:justify-center min-h-screen bg-black z-[100] ">
+                        <img src={VerticalPheonixCasino} alt="" className='w-11/12 max-w-max z-[120] ' />
+
+                    </div>
+                    :
+                    null}
 
                 <div className='relative flex flex-col items-center justify-between w-full h-screen overflow-hidden'>
 
@@ -127,23 +150,18 @@ const Hero = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                         className="w-full h-screen object-cover top-0 right-0 absolute z-[1]"
                     >
-                        {!vidLoading ?
-                            <div
-                                className="flex items-center justify-end min-w-full min-h-full bg-black back sm:justify-center "
-                            ></div>
-                            :
-                            <video
-                                ref={vidRef}
-                                width="100%"
-                                height="100%"
-                                autoPlay
-                                loop
-                                muted // Add the muted attribute
-                                src={BgVideo}
-                                type="video/mp4"
-                                className='object-cover w-full h-full'
-                            />
-                        }
+                        <video
+                            ref={vidRef}
+                            width="100%"
+                            height="100%"
+                            autoPlay
+                            loop
+                            muted // Add the muted attribute
+                            src={BgVideo}
+                            type="video/mp4"
+                            className='object-cover w-full h-full'
+                        />
+
                     </motion.div>
 
 
