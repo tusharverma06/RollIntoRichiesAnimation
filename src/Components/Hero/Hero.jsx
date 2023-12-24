@@ -19,6 +19,7 @@ import BlurredCoin from '../../assets/blurreCoin.svg'
 import BronzeCoin from '../../assets/leftBronzeCoin.svg'
 import GoldCoin from '../../assets/goldenCoinRight.svg'
 import WheelArrow from '../../assets/wheelArrow.svg'
+import WhatsAppPopup from './WhatsApp';
 
 const Hero = () => {
     const vidRef = useRef()
@@ -64,11 +65,9 @@ const Hero = () => {
     useEffect(() => {
         const handleVideoLoaded = () => {
             setVidLoaded(true);
-            console.log('Video loaded');
         };
 
         const videoElement = vidRef.current;
-        console.log(videoElement);
         if (videoElement) {
             videoElement.addEventListener('loadeddata', handleVideoLoaded);
 
@@ -84,7 +83,6 @@ const Hero = () => {
             }
         };
     }, []);
-    console.log(vidLoaded);
     return (
         <section ref={targetRef} className="w-full h-[220vh] sm:h-[350vh] relative no-scrollbar">
 
@@ -368,6 +366,8 @@ const Hero = () => {
                         </motion.img>
                     </motion.div>
                 </div>
+
+
             </motion.div>
 
         </section>
