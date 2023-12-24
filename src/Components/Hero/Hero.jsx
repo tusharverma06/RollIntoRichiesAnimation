@@ -19,12 +19,13 @@ import BlurredCoin from '../../assets/blurreCoin.svg'
 import BronzeCoin from '../../assets/leftBronzeCoin.svg'
 import GoldCoin from '../../assets/goldenCoinRight.svg'
 import WheelArrow from '../../assets/wheelArrow.svg'
+import WhatsAppPopup from './WhatsApp';
 
 const Hero = () => {
     const vidRef = useRef()
 
     const [isShow, setIsShow] = useState(true)
-
+    const [vidLoaded, setVidLoaded] = useState(false)
 
     const windoWidth = useMediaQuery()
     // Framer motion stuff
@@ -60,12 +61,43 @@ const Hero = () => {
 
     }, [isShow, windoWidth]);
 
+
+    useEffect(() => {
+        const handleVideoLoaded = () => {
+            setVidLoaded(true);
+        };
+
+        const videoElement = vidRef.current;
+        if (videoElement) {
+            videoElement.addEventListener('loadeddata', handleVideoLoaded);
+
+            // Check if video is already loaded
+            if (videoElement.readyState >= 3) {
+                handleVideoLoaded();
+            }
+        }
+
+        return () => {
+            if (videoElement) {
+                videoElement.removeEventListener('loadeddata', handleVideoLoaded);
+            }
+        };
+    }, []);
     return (
         <section ref={targetRef} className="w-full h-[220vh] sm:h-[350vh] relative no-scrollbar">
 
             <motion.div className='sticky top-0 right-0 flex items-start justify-start w-full h-screen no-scrollbar' style={{ background: background }}>
 
 
+                {!vidLoaded ?
+
+                    <div
+                        className="min-w-full back flex items-center justify-center sticky top-0 sm:justify-center min-h-screen bg-black z-[100] ">
+                        <img src={VerticalPheonixCasino} alt="" className='w-11/12 max-w-max z-[120] ' />
+
+                    </div>
+                    :
+                    null}
 
                 <div className='relative flex flex-col items-center justify-between w-full h-screen overflow-hidden'>
 
@@ -127,6 +159,7 @@ const Hero = () => {
                             type="video/mp4"
                             className='object-cover w-full h-full'
                         />
+
                     </motion.div>
 
 
@@ -333,6 +366,8 @@ const Hero = () => {
                         </motion.img>
                     </motion.div>
                 </div>
+
+
             </motion.div>
 
         </section>
