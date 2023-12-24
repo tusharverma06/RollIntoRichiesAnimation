@@ -65,6 +65,7 @@ const Hero = () => {
         if (vidRef.current) {
             vidRef.current.onloadeddata = () => {
                 console.log('Video loaded');
+                alert('video loaded')
                 setVidLoading(true);
             };
         }
