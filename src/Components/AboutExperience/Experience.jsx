@@ -12,19 +12,19 @@ const Experience = () => {
         {
             title: `Endless Excitement`,
             text: `Lorem ipsum dolor sit amet consectetur. Morbi varius consectetur blandit eu tellus.`,
-            vid: Exp1
+            vid: "/GIF/Exp1.gif"
         },
 
         {
             title: `Limitless Luck`,
             text: `Lorem ipsum dolor sit amet consectetur. Morbi varius consectetur blandit eu tellus.`,
-            vid: Exp2
+            vid: "/GIF/Exp2.gif"
         },
 
         {
             title: `Festive Fun`,
             text: `Lorem ipsum dolor sit amet consectetur. Morbi varius consectetur blandit eu tellus.`,
-            vid: Exp3
+            vid: "/GIF/Exp3.gif"
         },
 
     ]
