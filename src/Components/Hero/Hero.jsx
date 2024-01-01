@@ -19,8 +19,7 @@ import BlurredCoin from '../../assets/blurreCoin.svg'
 import BronzeCoin from '../../assets/leftBronzeCoin.svg'
 import GoldCoin from '../../assets/goldenCoinRight.svg'
 import WheelArrow from '../../assets/wheelArrow.svg'
-import WhatsAppPopup from './WhatsApp';
-
+import LoadingGif from '../../assets/LoadingLogo.gif'
 const Hero = () => {
     const vidRef = useRef()
 
@@ -83,6 +82,7 @@ const Hero = () => {
             }
         };
     }, []);
+
     return (
         <section ref={targetRef} className="w-full h-[220vh] sm:h-[350vh] relative no-scrollbar">
 
@@ -93,7 +93,7 @@ const Hero = () => {
 
                     <div
                         className="min-w-full back flex items-center justify-center sticky top-0 sm:justify-center min-h-screen bg-black z-[100] ">
-                        <img src={VerticalPheonixCasino} alt="" className='w-11/12 max-w-max z-[120] ' />
+                        <img src={LoadingGif} alt="" className='w-11/12 max-w-[200px] z-[120] ' />
 
                     </div>
                     :
