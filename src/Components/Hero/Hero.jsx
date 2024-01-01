@@ -176,7 +176,7 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeIn", delay: 0.5 }}
                             className=' right-0  w-[100px]  sm:w-[156px] lg:w-[206px] xl:w-[306px] bottom-[calc(0%-0px)] h-screen z-[15] absolute '
                         >
-                            <img loading="lazy" src={Curtain} className='w-full h-full' alt="" />
+                            <img src={Curtain} className='w-full h-full' alt="" />
                         </motion.div>
 
                         {/* left curtain */}
@@ -189,7 +189,7 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeIn", delay: 0.5 }}
                             className=' left-0  w-[100px] sm:w-[156px] lg:w-[206px] xl:w-[306px] bottom-[calc(0%-0px)] h-screen z-[15] absolute '
                         >
-                            <img loading="lazy" src={Curtain} className='w-full h-full' alt="" />
+                            <img src={Curtain} className='w-full h-full' alt="" />
                         </motion.div>
 
                     </section>
@@ -213,7 +213,7 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
                             className='left-[-2%] sm:-left-[8%] lg:-left-[18%]   w-[120px] sm:w-[200px] bottom-[calc(0%-40px)] h-[120px] sm:h-[200px]  lg:w-[226px] lg:h-[226px] z-[35] absolute '
                         >
-                            <img loading="lazy" src={SpadeLeftCard} className='w-full h-full' alt="" />
+                            <img src={SpadeLeftCard} className='w-full h-full' alt="" />
                         </motion.div>
 
                         {/*  A heart card*/}
@@ -226,13 +226,13 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeInOut" }}
                             className=' left-[0%] sm:left-[-6%] lg:-left-[14%]   w-[120px] sm:w-[220px] bottom-[calc(0%-10px)] h-[120px] sm:h-[220px]  lg:w-[266px] lg:h-[266px] z-40 absolute '
                         >
-                            <img loading="lazy" src={HeartCardA} className='w-full h-full' alt="" />
+                            <img src={HeartCardA} className='w-full h-full' alt="" />
                         </motion.div>
 
                         <div className="relative">
 
                             {/* wheel Arrow */}
-                            <img loading="lazy" src={WheelArrow} className='absolute z-50 -translate-x-1/2 left-1/2 lg:bottom-[38%] bottom-[38%] sm:bottom-[44%] w-16 ' alt="" />
+                            <img src={WheelArrow} className='absolute z-50 -translate-x-1/2 left-1/2 lg:bottom-[38%] bottom-[38%] sm:bottom-[44%] w-16 ' alt="" />
 
                             {/* wheel image */}
                             <img src={Wheel} className='relative z-30 w-[350px] wheel bottom-[-100px] sm:bottom-[-150px] lg:bottom-[-180px] sm:w-[550px] ' alt="" />
@@ -249,7 +249,7 @@ const Hero = () => {
                             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
                             className=' -right-[6%] lg:-right-[14%]   w-[120px] sm:w-[200px] bottom-[calc(0%-40px)] h-[120px] sm:h-[200px]  lg:w-[206px] lg:h-[206px] z-[45] absolute '
                         >
-                            <img loading="lazy" src={SpadeRightCard} className='w-full h-full' alt="" />
+                            <img src={SpadeRightCard} className='w-full h-full' alt="" />
                         </motion.div>
 
                         {/*  A Diamond card*/}
@@ -312,7 +312,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' right-[-1%] lg:right-[-1%] 2xl:right-[-1%] sm:bottom-[calc(0%+350px)] bottom-[calc(0%+160px)]   w-[91px]   h-[83px]  z-40 absolute '
                     >
-                        <img loading="lazy" src={BronzeCoin} className='w-full h-full' alt="" />
+                        <img src={BronzeCoin} className='w-full h-full' alt="" />
                     </motion.div>
 
                     {/*coin left*/}
@@ -320,7 +320,7 @@ const Hero = () => {
                         style={{ display, }}
                         className=' left-[6%]  lg:left-[8%] 2xl:left-[12%] bottom-[calc(0%+180px)]  coin w-[86px] sm:w-[125px] lg:w-[168px]  h-[76px] sm:h-[120px] lg:h-[163px] z-40 absolute '
                     >
-                        <img loading="lazy" style={{ rotateY: 180 }} src={RightCoin} className='w-full h-full scale-150 sm:scale-100' alt="" />
+                        <img style={{ rotateY: 180 }} src={RightCoin} className='w-full h-full scale-150 sm:scale-100' alt="" />
                     </motion.div>
 
 
@@ -329,7 +329,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' left-[-5%] lg:left-[-3%] 2xl:left-[0%] bottom-[calc(0%+450px)] sm:bottom-[calc(0%+300px)]   w-[86px] sm:w-[75px] lg:w-[115px]  h-[76px] sm:h-[70px] lg:h-[119px] z-40 absolute '
                     >
-                        <img loading="lazy" src={BlurredCoin} className='w-full rotate-[-60deg]  h-full' alt="" />
+                        <img src={BlurredCoin} className='w-full rotate-[-60deg]  h-full' alt="" />
                     </motion.div>
 
                     {/*goldish bronze coin left*/}
@@ -337,7 +337,7 @@ const Hero = () => {
                         style={{ display }}
                         className='left-[-6%] sm:left-[0%] bottom-[calc(0%+520px)] sm:bottom-[calc(0%+420px)]   w-[46px] h-[38px]  z-40 absolute '
                     >
-                        <img loading="lazy" src={GoldCoin} className='w-full h-full' alt="" />
+                        <img src={GoldCoin} className='w-full h-full' alt="" />
                     </motion.div>
 
                     {/* bronze coin left */}
@@ -345,7 +345,7 @@ const Hero = () => {
                         style={{ display }}
                         className=' left-[0%] sm:left-[5%] bottom-[calc(0%+240px)] sm:bottom-[calc(0%+420px)]  w-[91px]   h-[83px]  z-40 absolute '
                     >
-                        <img loading="lazy" src={BronzeCoin} className='w-full h-full' alt="" />
+                        <img src={BronzeCoin} className='w-full h-full' alt="" />
                     </motion.div>
 
 
