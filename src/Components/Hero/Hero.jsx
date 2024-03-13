@@ -89,16 +89,7 @@ const Hero = () => {
             <motion.div className='sticky top-0 right-0 flex items-start justify-start w-full h-screen no-scrollbar' style={{ background: background }}>
 
 
-                {!vidLoaded ?
-
-                    <div
-                        className="min-w-full back flex items-center justify-center sticky top-0 sm:justify-center min-h-screen bg-black z-[100] ">
-                        <img src={LoadingGif} alt="" className='w-11/12 max-w-[200px] z-[120] ' />
-
-                    </div>
-                    :
-                    null}
-
+               
                 <div className='relative flex flex-col items-center justify-between w-full h-screen overflow-hidden'>
 
                     {/* initial load */}
