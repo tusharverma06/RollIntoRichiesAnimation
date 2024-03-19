@@ -8,7 +8,7 @@ const WhatsAppPopup = () => {
 
     // WhatsApp SVG icon
     const WhatsAppIcon = () => (
-        <img src="https://seeklogo.com/images/W/whatsapp-icon-logo-6E793ACECD-seeklogo.com.png" alt="" className='w-6 h-6' />
+        <img src="/whatsappIcon.webp" alt="" className='w-6 h-6' />
     );
 
     const CrossIcon = () => (

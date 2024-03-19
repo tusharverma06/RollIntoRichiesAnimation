@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useRef } from 'react'
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { useScroll, useTransform, motion } from 'framer-motion'
-import BgVideo from '../../assets/bgVideo.mp4'
+import BgVideo from '../../assets/bgVideo.webm'
 import Wheel from '../../assets/chakra.webp'
 import VerticalPheonixCasino from '../../assets/pheonixCasinoGoaVertical.svg'
 import HeartCardA from '../../assets/cardHeartA.svg'

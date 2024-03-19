@@ -1,8 +1,5 @@
 import React from 'react'
 import Gradient from '../../assets/backgroundGradient.svg'
-import Exp1 from '../../assets/Exp1.mp4'
-import Exp3 from '../../assets/Exp3.mp4'
-import Exp2 from '../../assets/Exp2.mp4'
 import ExperienceContainer from './ExperienceContainer'
 import SectionContainer from '../Container/SectionContainer'
 
